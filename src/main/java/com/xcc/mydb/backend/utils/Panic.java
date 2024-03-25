@@ -1,4 +1,4 @@
-package com.xcc.mydb.backend.util;
+package com.xcc.mydb.backend.utils;
 
 public class Panic {
     /**

@@ -1,4 +1,4 @@
-package com.xcc.mydb.backend.util;
+package com.xcc.mydb.backend.utils;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
