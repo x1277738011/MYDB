@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a49f86c6-61ed-4221-bc19-c24da71315e8" name="变更" comment="" />
+    <list default="true" id="a49f86c6-61ed-4221-bc19-c24da71315e8" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MYDB.md" beforeDir="false" afterPath="$PROJECT_DIR$/MYDB.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xcc/mydb/backend/tm/TransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xcc/mydb/backend/tm/TransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xcc/mydb/backend/tm/TransactionManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xcc/mydb/backend/tm/TransactionManagerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xcc/mydb/common/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xcc/mydb/common/Error.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +28,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -37,6 +46,7 @@
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2e7GShgjqE9zS2BQDsyxSsgvhsn" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,10 +58,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/xcc/mydb" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/xcc/mydb/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="模块" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
@@ -106,11 +117,24 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711248208196</updated>
-      <workItem from="1711248210832" duration="18896000" />
+      <workItem from="1711248210832" duration="21300000" />
+      <workItem from="1711336078348" duration="3737000" />
+      <workItem from="1711354424212" duration="3046000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

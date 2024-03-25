@@ -1,3 +1,7 @@
+# MYDB
+
+相关知识点补齐
+
 # JAVA IO
 
 ## RandomAccessFile
@@ -95,5 +99,4 @@ RandomAccessFile包含三个方法来操作文件记录指针
 如果你设置的position超过了文件的大小，并且尝试从Channel读取数据，则会返回-1代表文件结尾。
 
 如果你设置的position超过了文件的大小，并且尝试往Channel写入数据，文件会自动扩张至能放下position以及写入的数据。这个可能导致"file hole"，即磁盘上的物理文件在写入的数据中存在漏洞（即中间有一段完全没有任何数据）
-
 

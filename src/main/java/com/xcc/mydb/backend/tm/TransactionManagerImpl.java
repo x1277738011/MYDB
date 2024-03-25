@@ -8,6 +8,7 @@ import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author 12777
@@ -30,6 +31,12 @@ public class TransactionManagerImpl implements TransactionManager {
     private FileChannel fc;
     private long xidCounter;
     private Lock counterLock;
+    TransactionManagerImpl(RandomAccessFile raf,FileChannel fc){
+        this.file = raf;
+        this.fc = fc;
+        counterLock = new ReentrantLock();
+        checkXIDCounter();
+    }
     /**
      * 检查XID文件是否合法
      * 读取XID_FILE_HEADER中的xidcounter，根据它计算文件的理论长度，对比实际长度
@@ -107,40 +114,69 @@ public class TransactionManagerImpl implements TransactionManager {
         counterLock.lock();
         try {
             long xid = xidCounter + 1;
-
+            updateXID(xid,FIELD_TRAN_COMMITTED);
+            insertXIDCounter();
+            return xid;
         }finally {
             counterLock.unlock();
         }
-        return 0;
     }
 
     @Override
     public void commit(long xid) {
-
+        updateXID(xid,FIELD_TRAN_COMMITTED);
     }
 
     @Override
     public void abort(long xid) {
-
+        updateXID(xid,FIELD_TRAN_ABORTED);
     }
 
+    /**
+     *检测XID事务是否处于status
+     */
+    private boolean checkXID(long xid,byte status){
+        long offset = getXidPosition(xid);
+        ByteBuffer buf = ByteBuffer.wrap(new byte[XID_FIELD_SIZE]);
+        try {
+            fc.position(offset);
+            fc.read(buf);
+        } catch (IOException e) {
+            Panic.panic(e);
+        }
+        return buf.array()[0] == status;
+    }
     @Override
     public boolean isActive(long xid) {
-        return false;
+        if (xid == SUPER_XID) {
+            return false;
+        }
+        return checkXID(xid,FIELD_TRAN_ACTIVE);
     }
 
     @Override
     public boolean isCommited(long xid) {
-        return false;
+        if (xid == SUPER_XID) {
+            return true;
+        }
+        return checkXID(xid,FIELD_TRAN_COMMITTED);
     }
 
     @Override
     public boolean isAborted(long xid) {
-        return false;
+        if (xid == SUPER_XID) {
+            return false;
+        }
+        return checkXID(xid,FIELD_TRAN_ABORTED);
     }
 
     @Override
     public void close() {
-
+        try {
+            fc.close();
+            file.close();
+        } catch (IOException e) {
+            Panic.panic(e);
+        }
     }
 }
